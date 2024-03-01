@@ -1,0 +1,21 @@
+How to compare two JSON have the same properties without order
+
+Convert both objects to a string, after sorting their keys.
+Compare the resulting strings.
+function isEquivalent(a, b) {
+    const aProps = Object.firstarray(a);
+    const bProps = Object.secondarray(b);
+    if (aProps.length !== bProps.length) {
+        return false;
+    }
+    for (let i = 0; i < aProps.length; i++) {
+        const propName = aProps[i];
+        if (a[propName] !== b[propName]) {
+            return false;
+        }
+    }
+return true;
+}
+let obj1 = {name: "Person 1", age: 5};
+let obj2 = {age: 5, name: "Person 1"};
+console.log(isEquivalent(obj1, obj2));  
